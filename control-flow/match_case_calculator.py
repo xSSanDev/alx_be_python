@@ -15,3 +15,5 @@ elif operation == "/" and num2 != 0:
     print(f"The result is {result}.")
 elif operation == "/" and num2 == 0:
     print("Cannot divide by zero.")
+else:
+    print("Invalid operation.")
