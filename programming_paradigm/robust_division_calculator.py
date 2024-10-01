@@ -13,4 +13,4 @@ def safe_divide(numerator, denominator):
         # Handle non-numeric input
         return "Error: Please enter numeric values only."
     # Return the result if no exceptions were raised
-    return f"The resut of the division is : {result}"
+    return f"The result of the division is {result}"
