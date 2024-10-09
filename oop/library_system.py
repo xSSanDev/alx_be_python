@@ -46,4 +46,9 @@ class Library:
     # Method to list all books in the library
     def list_books(self):
         for book in self.books:
-            print(book)
+            if isinstance(book, EBook):
+                print(f"EBook: {book}")
+            elif isinstance(book, PrintBook):
+                print(f"PrintBook: {book}")
+            else:
+                print(f"Book: {book}")
