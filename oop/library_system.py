@@ -7,6 +7,10 @@ class Book:
         self.title = title
         self.author = author
 
+    # String representation method to return a formatted string for the Book instance
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
 # Define the derived class EBook that inherits from Book
 class EBook(Book):
     # Constructor to initialize the EBook instance with title, author, and file size
@@ -14,12 +18,20 @@ class EBook(Book):
         super().__init__(title, author)  # Call the base class constructor
         self.file_size = file_size
 
+    # String representation method to return a formatted string for the EBook instance
+    def __str__(self):
+        return f"{self.title} by {self.author}, File Size: {self.file_size}KB"
+
 # Define the derived class PrintBook that inherits from Book
 class PrintBook(Book):
     # Constructor to initialize the PrintBook instance with title, author, and page count
     def __init__(self, title, author, page_count):
         super().__init__(title, author)  # Call the base class constructor
         self.page_count = page_count
+
+    # String representation method to return a formatted string for the PrintBook instance
+    def __str__(self):
+        return f"{self.title} by {self.author}, Page Count: {self.page_count}"
 
 # Define the Library class to manage a collection of books
 class Library:
@@ -34,9 +46,4 @@ class Library:
     # Method to list all books in the library
     def list_books(self):
         for book in self.books:
-            if isinstance(book, EBook):
-                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
-            elif isinstance(book, PrintBook):
-                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
-            else:
-                print(f"Book: {book.title} by {book.author}")
+            print(book)
